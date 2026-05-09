@@ -323,18 +323,18 @@ def chat_loop(qa: QASystem):
         try:
             q = input(">> 你想问什么？  ").strip()
         except (EOFError, KeyboardInterrupt):
-            print("\n再见 👋");
+            print("\n再见!");
             break
         if not q:
             continue
         if q.lower() in ("q", "quit", "exit", "退出"):
-            print("再见 👋");
+            print("再见!");
             break
         res = qa.answer(q)
         print(f"\n[匹配类型: {res.get('matched', '未知')}]")
         print(res["answer"])
         if res.get("chart"):
-            print(f"📊 相关图表: {res['chart']}")
+            print(f"[相关图表] {res['chart']}")
         print()
 
 
